@@ -1,0 +1,1115 @@
+/* Основные стили для ПК */
+
+/* Добавляем глобальное правило box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    /* padding-top: 0px; /* Это избыточно */
+    color: #000000;
+    font-size: 15px;
+    line-height: 1.5;
+    /* overflow-x: hidden; /* Оставим пока здесь, но лучше найти источник */
+}
+
+.burger-menu-btn {
+    display: none; /* Скрываем по умолчанию на ПК */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    z-index: 1001;
+}
+
+.burger-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff; /* Цвет иконки */
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.burger-icon::before {
+    top: -8px;
+}
+
+.burger-icon::after {
+    top: 8px;
+}
+
+.burger-menu-btn.open .burger-icon {
+    background-color: transparent;
+}
+
+.burger-menu-btn.open .burger-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.burger-menu-btn.open .burger-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+header {
+    background: rgba(0, 51, 102, 0);
+    color: rgb(255, 255, 255);
+    /* padding: 8px 0; /* Изменено ниже */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Добавим padding по горизонтали на ПК */
+    padding: 8px 20px;
+}
+
+header.solid {
+    background: rgb(0, 51, 102);
+}
+
+.nav-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    max-width: 100px;
+    width: auto;
+    /* Убираем большой margin-left на ПК, используем padding на header */
+    margin-left: 0;
+}
+
+.fixit-text {
+    position: relative;
+    font-size: 25px;
+    color: #ffffff;
+    margin: 0;
+    z-index: 2;
+    display: inline-block;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    /* Уменьшаем отступы на ПК */
+    margin: 0 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+    /* margin-left: 0; /* Избыточно */
+    margin-top: 25px;
+}
+
+nav a:hover {
+    color: #93939b;
+}
+
+nav a.nav-active {
+    position: relative;
+    padding-bottom: 1px;
+}
+
+nav a.nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0.1px;
+    width: 100%;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    position: relative;
+    /* overflow: hidden; /* Возможно, не нужно здесь */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; /* Убедимся, что hero занимает всю доступную ширину */
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 57px;
+    margin: 0;
+    font-family: Arial;
+    /* Добавим max-width и padding для текста */
+    max-width: 90%;
+    padding: 0 10px;
+}
+
+.hero h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 22px;
+    margin: 12px 0;
+    font-family: Arial, sans-serif;
+    /* Добавим max-width и padding для текста */
+    max-width: 90%;
+    padding: 0 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 25px;
+    font-size: 18px;
+    background-color: #008CBA;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+
+.btn:hover {
+    background-color: #005f73;
+}
+
+.hero p {
+    position: relative;
+    z-index: 2;
+    font-size: 6px;
+    margin: 0px 0;
+}
+
+#triangle {
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid rgba(0, 102, 204, 0.5);
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.5s ease;
+}
+
+.about-section {
+    max-width: 1625px;
+    margin: 0 auto;
+    padding: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    width: 100%; /* Убедимся, что секция не переполняет */
+}
+
+.about-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section {
+    text-align: center;
+    margin: 12px 0;
+    padding: 2px 0;
+    width: 100%; /* Убедимся, что секция не переполняет */
+}
+
+h2 {
+    margin: 0;
+    padding: 12px 0;
+}
+
+.section h2 {
+    font-size: 25px;
+    margin: 0;
+    padding: 37px 0;
+    color: #000000;
+}
+
+.company-description {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* Добавим padding, чтобы элементы не прилипали к краям */
+    padding: 0 10px;
+    width: 100%; /* Убедимся, что контейнер не переполняет */
+}
+
+.company-description div {
+    flex: 0 0 23%; /* 4 элемента в ряд на ПК */
+    margin: 10px 1%; /* Добавлены отступы */
+    padding: 10px; /* Добавлены внутренние отступы */
+    /* box-sizing: border-box; /* Уже добавлено глобально */
+    text-align: center; /* Центрируем текст */
+}
+
+.company-description img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.action-section {
+    background-size: cover;
+    height: 375px;
+    background-position: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Убедимся, что секция не переполняет */
+    /* Добавим padding, чтобы контент не прилипал к краям */
+    padding: 20px;
+}
+
+.action-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.action-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    /* Добавим max-width, чтобы контент не растягивался слишком сильно */
+    max-width: 90%;
+}
+
+.action-content h2 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.action-content h3 {
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.order-button {
+    display: inline-block;
+    padding: 2px 24px;
+    font-size: 17px;
+    background-color: #008CBA;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 17px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.order-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.6), rgba(0, 0, 0, 0));
+    transition: left 0.5s;
+}
+
+.order-button:hover::after {
+    left: 100%;
+}
+
+.order-button:hover {
+    background-color: #005f73;
+}
+
+.button {
+    background-color: #008CBA;
+    color: white;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 4px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #005f73;
+}
+
+footer {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #003366;
+    color: white;
+    margin-top: 12px;
+    width: 100%; /* Убедимся, что футер не переполняет */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    /* Добавим max-width и margin auto для центрирования формы */
+    max-width: 500px;
+    margin: 12.5px auto;
+    /* Добавим padding, чтобы поля ввода не прилипали к краям на узких экранах */
+    padding: 0 10px;
+    width: 100%; /* Убедимся, что форма занимает всю доступную ширину родителя (с учетом max-width) */
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #0c0505;
+    border-radius: 1px;
+    font-size: 16px;
+    width: 100%; /* Поля ввода занимают 100% ширины формы */
+    margin: 7.5px 0;
+}
+
+form input:focus {
+    border-color: #000076;
+    outline: none;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* Добавим padding, чтобы элементы не прилипали к краям */
+    padding: 0 10px;
+    width: 100%; /* Убедимся, что контейнер не переполняет */
+}
+
+.service-card {
+    flex: 1;
+    width: 28%;
+    margin: 4px;
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 2px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    /* box-sizing: border-box; /* Уже добавлено глобально */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+    width: 100%;
+    height: 362px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: cover;
+}
+
+.testimonial-slider {
+    position: relative;
+    margin-top: 5px;
+    overflow: hidden;
+    width: 100%; /* Убедимся, что слайдер занимает 100% */
+    /* Убираем горизонтальный padding из слайдера на ПК */
+    padding: 0;
+}
+
+.testimonials {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%; /* Убедимся, что контейнер отзывов занимает всю доступную ширину */
+}
+
+.testimonial {
+    /* min-width: 100%; /* Уберем или изменим */
+    padding: 5px;
+    /* box-sizing: border-box; /* Уже добавлено глобально */
+    text-align: center;
+    font-style: italic;
+    color: #000000;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Убедимся, что testimonial занимает ровно 100% родителя */
+    min-width: 100%; /* Оставим 100% для ПК, т.к. это слайдер */
+    padding: 10px; /* Добавим внутренний padding */
+}
+
+.dots {
+    text-align: center;
+    margin-top: 2px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 2px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #000076;
+}
+
+.faq-section {
+    margin: 5px auto;
+    max-width: 1500px;
+    /* Добавим padding, чтобы контент не прилипал к краям */
+    padding: 0 10px;
+    width: 100%; /* Убедимся, что секция не переполняет */
+}
+
+.faq {
+    margin: 2px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 7px;
+    transition: background 0.3s;
+    width: 100%; /* Убедимся, что заголовок не переполняет */
+    padding: 10px; /* Добавим padding для содержимого заголовка */
+}
+
+.faq-header:hover {
+    background: #3355997d;
+}
+
+.faq-toggle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #3559a0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.plus-icon {
+    color: white;
+    font-size: 25px;
+}
+
+.faq p {
+    display: none;
+    padding: 2px;
+    background: #ffffff3b;
+    border-left: 6px solid #3559a0;
+    border-radius: 5px;
+    padding: 10px; /* Добавим padding для содержимого ответа */
+    width: 100%; /* Убедимся, что параграф занимает всю доступную ширину */
+}
+
+.faq.open {
+    max-height: 500px;
+    transition: max-height 0.5s ease;
+}
+
+.faq.open p {
+    display: block;
+}
+
+.faq.open .plus-icon {
+    transform: rotate(45deg);
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 100%; /* Убедимся, что testimonial не переполняет */
+    min-width: 100%; /* Оставим 100% для ПК, т.к. это слайдер */
+    padding: 10px; /* Добавим padding */
+}
+
+.client-photo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 3px;
+    flex-shrink: 0;
+}
+
+.testimonial-content {
+    display: flex;
+    /* align-items: center; /* Удалено */
+    flex-direction: row; /* На ПК оставляем горизонтально */
+    align-items: center;
+    text-align: left; /* Выравниваем текст по левому краю на ПК */
+    flex-grow: 1;
+    width: auto; /* Ширина определяется содержимым */
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    margin: 2px 0;
+    font-size: 19px;
+    padding: 0 5px;
+    width: auto; /* Ширина определяется содержимым */
+}
+
+.testimonial p {
+    margin: 0;
+    font-weight: bold;
+    padding: 0 5px;
+    width: auto; /* Ширина определяется содержимым */
+}
+
+.stages-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+    cursor: pointer;
+    padding: 0 10px;
+    width: 100%; /* Убедимся, что контейнер не переполняет */
+}
+
+.stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    width: 100%; /* На мобильных будет переопределено */
+    max-width: 250px; /* Ограничим максимальную ширину на ПК */
+}
+
+.stage.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stage::after {
+    content: attr(data-step);
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 87px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.stage:hover .stage-image {
+    filter: brightness(0.6);
+    transform: scale(1.05);
+}
+
+.stage:hover::after {
+    opacity: 1;
+}
+
+.stage-image {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    border: 2px solid #226dc8;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.stage-title h3 {
+    margin-top: 50px;
+    font-size: 17.5px;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.nav-active {
+    border-bottom: 2px solid #f8f8f8;
+    color: #ffffff;
+}
+
+#contact {
+    padding: 12.5px;
+    background-size: cover;
+    text-align: center;
+    width: 100%; /* Убедимся, что секция не переполняет */
+    padding: 12.5px 20px; /* Добавим padding по горизонтали */
+}
+
+#contact h2 {
+    font-size: 25px;
+    margin-bottom: 22.4px;
+    color: #ffffff;
+}
+
+#contact p {
+    font-size: 22.5px;
+    margin: 12.5px 0;
+    color: #ffffff;
+}
+
+.contact-info {
+    margin-top: 12.5px;
+    font-size: 4px;
+    color: #ffffff;
+}
+
+.contact-info a {
+    color: #008CBA;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Форма уже настроена выше */
+
+.button {
+    background-color: #008CBA;
+    color: white;
+    padding: 5px 17.5px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 13.75px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #005f73;
+}
+
+/* ======================================== */
+/* Медиазапросы для адаптивности */
+/* ======================================== */
+
+/* Стили для планшетов (от 769px до 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 8px 15px; /* Корректируем padding шапки */
+    }
+
+    .logo img {
+        margin-left: 0;
+        max-width: 90px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        margin-top: 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .company-description {
+        flex-wrap: wrap;
+        padding: 0 10px;
+    }
+
+    .company-description div {
+        flex: 0 0 48%;
+        margin: 10px 1%;
+    }
+
+    .flex-container {
+        justify-content: space-around;
+        padding: 0 10px;
+    }
+
+    .service-card {
+        width: 48%;
+        margin: 10px 1%;
+    }
+
+    .stage-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .stage-title h3 {
+        margin-top: 30px;
+    }
+
+    .stage::after {
+        font-size: 70px;
+    }
+
+    .testimonial .testimonial-content {
+         flex-direction: column; /* На планшетах тоже можно сделать вертикально */
+         align-items: center;
+         text-align: center; /* Центрируем текст на планшетах */
+    }
+
+    .client-photo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+     .testimonial blockquote,
+     .testimonial p {
+         text-align: center; /* Центрируем текст */
+         width: 100%; /* Занимаем всю доступную ширину */
+     }
+
+
+    .faq-section {
+        max-width: 90%;
+        padding: 0 10px;
+    }
+
+    .faq-header {
+         justify-content: flex-start;
+    }
+
+    .faq-toggle {
+        margin-right: 15px;
+    }
+
+    #contact {
+        padding: 12.5px 15px;
+    }
+
+    #contact form input {
+        max-width: 80%;
+    }
+}
+
+/* Стили для мобильных устройств (до 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+        overflow-x: hidden; /* Оставим, после внесения исправлений */
+    }
+
+    header {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-between;
+        width: 100%;
+        left: 0;
+    }
+
+    .logo img {
+        margin-right: 0;
+        margin-left: 0;
+        max-width: 65px;
+    }
+
+    .burger-menu-btn {
+        display: block;
+        z-index: 1001;
+        flex-shrink: 0;
+    }
+
+    .nav-container {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #003366;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 999;
+        overflow-y: auto;
+        max-height: calc(100vh - 60px);
+        right: 0; /* Убедимся, что меню занимает всю ширину */
+    }
+
+    .nav-container.open {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        margin: 10px 0;
+        margin-top: 0;
+        padding: 5px 0;
+    }
+
+    .hero {
+        height: 100vh;
+        padding-top: 60px;
+        padding-left: 0; /* Убираем горизонтальные padding */
+        padding-right: 0; /* Убираем горизонтальные padding */
+        padding-bottom: 40px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        /* Сохраняем max-width и padding из общих стилей */
+    }
+
+    .hero h2 {
+        font-size: 18px;
+        /* Сохраняем max-width и padding из общих стилей */
+    }
+
+    .company-description {
+        flex-direction: column;
+        align-items: center;
+        padding: 0; /* Убираем горизонтальный padding */
+        width: 100%;
+    }
+
+    .company-description div {
+        width: 90%; /* Элементы занимают почти всю ширину */
+        margin: 15px 0;
+        padding: 10px; /* Добавляем padding к div */
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0; /* Убираем горизонтальный padding */
+        width: 100%;
+    }
+
+    .service-card {
+        width: 90%;
+        margin: 10px 0;
+        padding: 10px; /* Добавляем padding к карточке */
+    }
+
+    .service-card img {
+        height: auto;
+    }
+
+    .stages-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0; /* Убираем горизонтальный padding */
+        width: 100%;
+    }
+
+    .stage {
+        margin: 15px 0;
+        width: 90%; /* Устанавливаем ширину stage */
+        max-width: 250px;
+        padding: 10px 0; /* Добавляем padding к stage */
+    }
+
+    .stage-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    .stage-title h3 {
+         margin-top: 20px;
+         font-size: 16px;
+    }
+
+    .stage::after {
+        font-size: 50px;
+    }
+
+    .action-section {
+        height: auto;
+        /* Сохраняем padding из общих стилей */
+        width: 100%;
+    }
+
+    .action-content {
+         /* Сохраняем max-width из общих стилей */
+    }
+
+    .testimonial-slider {
+        padding: 0; /* Убираем горизонтальный padding из слайдера */
+        width: 100%;
+        overflow: hidden; /* Оставляем overflow: hidden для слайдера */
+    }
+
+    .testimonials {
+        display: flex; /* Убедимся, что это flex-контейнер */
+        transition: transform 0.5s ease;
+        width: 100%;
+    }
+
+    .testimonial {
+        flex-direction: column; /* Располагаем элементы вертикально */
+        align-items: center; /* Центрируем по горизонтали */
+        width: 100%; /* Отзыв занимает 90% ширины родителя */
+        margin: 0 auto; /* Центрируем отзыв */
+        margin-bottom: 10px; /* Отступ между отзывами */
+        padding: 15px; /* Добавляем padding */
+        min-width: auto; /* Убедимся, что не переопределяется min-width: 100% */
+        flex-shrink: 0; 
+    }
+
+    .client-photo {
+        margin-right: 0;
+        margin-bottom: 10px;
+        flex-shrink: 0; /* Убедимся, что фото не сжимается */
+    }
+    .testimonial-content {
+        flex-direction: column; /* Располагаем контент отзыва вертикально */
+        align-items: center; /* Центрируем контент по горизонтали */
+        text-align: center; /* Центрируем текст */
+        flex-grow: 1;
+        width: 100%; /* Убедимся, что контент занимает всю ширину родительского testimonial */
+    }
+
+    .testimonial blockquote,
+    .testimonial p {
+        text-align: center; /* Центрируем текст */
+        width: 100%; /* Занимаем всю доступную ширину */
+        padding: 0 5px; /* Добавляем padding для текста */
+        margin: 5px 0; /* Добавляем вертикальные отступы между blockquote и p */
+    }
+
+
+    .faq-section {
+        padding: 0; /* Убираем горизонтальный padding */
+        width: 100%;
+    }
+
+    .faq-header {
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         padding: 10px; /* Добавляем padding к заголовку */
+         width: 90%; /* Убедимся, что заголовок занимает почти всю ширину */
+         margin: 5px auto; /* Центрируем заголовок */
+    }
+
+    .faq-toggle {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .faq p {
+        font-size: 14px;
+        padding: 10px; /* Добавляем padding к ответу */
+        width: 90%; /* Убедимся, что ответ занимает почти всю ширину */
+        margin: 0 auto; /* Центрируем ответ */
+        margin-top: 5px;
+    }
+
+    #contact {
+        /* Сохраняем padding из общих стилей */
+         width: 100%;
+    }
+
+    #contact p {
+        font-size: 18px;
+    }
+
+    #contact form {
+        /* Форма уже настроена выше с max-width и margin: auto */
+    }
+
+    #contact form input {
+        max-width: 100%;
+        font-size: 10px;
+    }
+
+    .contact-info {
+        font-size: 12px;
+    }
+
+    footer {
+        padding: 10px 0;
+        font-size: 12px;
+        width: 100%;
+    }
+}

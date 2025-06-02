@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ООО РАКУРС</title>
+    <link rel="icon" href="images/b84cfd9b289911f0ad6732649ab172c1_1.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/script.js" defer></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM2WA4fEopL6nKnYnlXDPMj8F+8wZkw0W6F1I+"
+          crossorigin="anonymous" />
+</head>
+<body>
+<header class="transparent">
+    <div class="logo">
+        <img src="images/b84cfd9b289911f0ad6732649ab172c1_1.jpg" alt="Логотип компании" />
+    </div>
+    <button class="burger-menu-btn">
+        <span class="burger-icon"></span>
+    </button>
+    <div class="nav-container">
+        <nav>
+            <a href="#hero">Главная</a>
+            <a href="#about">О нас</a>
+            <a href="#services">Услуги</a>
+            <a href="#work-steps">Этапы</a>
+            <a href="#testimonials">Отзывы</a>
+            <a href="#faq">Вопросы</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </div>
+</header>
+
+<div id="triangle"></div>
+
+<div class="hero" id="hero" style="background-image: url('images/BrGZYOPZZUc.jpg');">
+    <div class="fixit-text">ООО РАКУРС</div>
+    <h1 class="animated-title"></h1>
+    <h2 class="animated-subtitle"></h2>
+    <a href="#services" class="btn">Подробнее <span class="arrow">→</span></a>
+</div>
+
+<div id="about" class="section about-section">
+    <h2>О НАШЕЙ КОМПАНИИ</h2>
+    <div class="company-description">
+        <div>
+            <img src="images/d143ce2674067ac123e59705cabb22b2.png" alt="Богатый опыт" />
+            <h3>Богатый опыт</h3>
+            <p>За всё время мы решали самые разные технические проблемы!</p>
+        </div>
+        <div>
+            <img src="images/Icons-01.png" alt="Решаем проблемы за 30 минут" />
+            <h3>Решаем проблемы за 30 минут</h3>
+            <p>Профессиональная помощь по всем IT-вопросам.</p>
+        </div>
+        <div>
+            <img src="images/dokumenty-57-0-850-960-1562968214.png" alt="Качество услуг" />
+            <h3>Качество услуг</h3>
+            <p>Наша команда гарантирует высокое качество выполнения работ.</p>
+        </div>
+        <div>
+            <img src="images/dostavka_icon3.png" alt="IT - аутсорсинг" />
+            <h3>IT - аутсорсинг</h3>
+            <p>Поможем вам в любое время, работаем круглосуточно.</p>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="#contact" class="order-button">Оставить заявку</a>
+    </div>
+</div>
+
+<div id="services" class="section">
+    <h2>НАШИ УСЛУГИ</h2>
+    <div class="flex-container">
+        <div class="service-card" data-alt-img="images/3a9fa131402c4398eed28a97e64a3fad_cropped_1332x1000.jpg">
+            <img src="images/proverka-rabotosposobnosti-lvs-v-biznes-centrax-i-ne-tolko-www-ural-org.jpg" alt="Диагностика устройств" />
+            <h3>Разработка ПО</h3>
+            <p>Быстрое создание программного обеспечения для дальнейших решений.</p>
+        </div>
+        <div class="service-card" data-alt-img="images/notebook-mockup08.jpg">
+            <img src="images/63e2c47548cfe107aadf43c34523b3a3.jpg" alt="Ремонт техники" />
+            <h3>Создание сайтов</h3>
+            <p>Профессиональная разработка сайтов для предприятий, интернет - магазинов, все это с гарантией качества и надежности.</p>
+        </div>
+        <div class="service-card" data-alt-img="images/7cf0965c8756dcc983b72f3f8964b50ae5ca5025b52f5001-f5db-5708-8ebe-0b327cfda74d.jpg">
+            <img src="images/7qgnchwzsyng2w1x1kzs2b70eh4desrv.jpg" alt="Информационная безопасность" />
+            <h3>Информационная безопасность</h3>
+            <p>Защита данных, установка антивирусных программ и профилактика вредоносного ПО для защиты вашей информации.</p>
+        </div>
+    </div>
+</div>
+
+<div id="work-steps" class="section">
+    <h2>ЭТАПЫ РАБОТЫ</h2>
+    <div class="stages-container">
+        <div class="stage" data-step="1" onclick="openStageDescription(1)">
+            <img src="images/mejlforvarder.jpg" alt="Этап 1" class="stage-image" />
+            <div class="stage-title"><h3>Шаг 1: Вызов специалиста</h3></div>
+        </div>
+        <div class="stage" data-step="2" onclick="openStageDescription(2)">
+            <img src="images/9777b555ae6eda8c54779c0e0d957260.jpg" alt="Этап 2" class="stage-image" />
+            <div class="stage-title"><h3>Шаг 2: Разработка и утверждения ТЗ</h3></div>
+        </div>
+        <div class="stage" data-step="3" onclick="openStageDescription(3)">
+            <img src="images/ctkmlt6m77auu9ueyfl5zgjqj8l03p9g.jpg" alt="Этап 3" class="stage-image" />
+            <div class="stage-title"><h3>Шаг 3: Создание продукта</h3></div>
+        </div>
+        <div class="stage" data-step="4" onclick="openStageDescription(4)">
+            <img src="images/iStock-865631640.jpg" alt="Этап 4" class="stage-image" />
+            <div class="stage-title"><h3>Шаг 4: Проверка и консультация</h3></div>
+        </div>
+    </div>
+</div>
+
+<div id="action-section" class="action-section" style="background-image: url('images/11.09.13.24.jpg');">
+    <div class="action-content">
+        <h2 id="promo-heading">15% СКИДКА ТОЛЬКО СЕЙЧАС</h2>
+        <h3 id="promo-subheading">Решайте проблемы вашей техники с нашей помощью.</h3>
+        <a href="#contact" class="btn order-button">Оставить заявку</a>
+    </div>
+</div>
+
+<div id="testimonials" class="section">
+    <h2>ОТЗЫВЫ НАШИХ КЛИЕНТОВ</h2>
+    <div class="testimonial-slider">
+        <div class="testimonials">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <img src="images/8ec3745f2832f41c0b97623ba91fc080_300_300.jpg" alt="Фото клиента 1" class="client-photo" />
+                    <blockquote>"Отличный сервис! Мой компьютер работает как новый после ремонта."</blockquote>
+                    <p class="client-name">- Алексей</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <img src="images/bd3978970b110caaed5edfdd55f6667e.jpeg" alt="Фото клиента 2" class="client-photo" />
+                    <blockquote>"Быстро, качественно и по разумной цене. Спасибо!"</blockquote>
+                    <p class="client-name">- Мария</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <img src="images/fc6703e79d41363832817cbdf297beaa.jpg" alt="Фото клиента 3" class="client-photo" />
+                    <blockquote>"Профессиональный подход и отличное обслуживание."</blockquote>
+                    <p class="client-name">- Иван</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <img src="images/247d0b53296d4cfe656186dacaa132e9.jpg" alt="Фото клиента 4" class="client-photo" />
+                    <blockquote>"Я очень довольна. Компания провела полный аудит нашей системы и выявила уязвимости, о которых мы и не подозревали."</blockquote>
+                    <p class="client-name">- Ксения</p>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <img src="images/загруженное.jpg" alt="Фото клиента 5" class="client-photo" />
+                    <blockquote>"Я стал чувствовать себя гораздо спокойнее, зная, что данные под надежной защитой."</blockquote>
+                    <p class="client-name">- Дмитрий</p>
+                </div>
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="showTestimonial(0)"></span>
+            <span class="dot" onclick="showTestimonial(1)"></span>
+            <span class="dot" onclick="showTestimonial(2)"></span>
+            <span class="dot" onclick="showTestimonial(3)"></span>
+            <span class="dot" onclick="showTestimonial(4)"></span>
+        </div>
+    </div>
+</div>
+
+<div id="faq" class="section faq-section">
+    <h2>ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+    <div class="faq">
+        <div class="faq-header">
+            <div class="faq-toggle">
+                <div class="plus-icon">+</div>
+            </div>
+            <h3>Как быстро идет разработка?</h3>
+        </div>
+        <p>Обычно разработка занимает от нескольких дней до одного месяца, в зависимости от сложности.</p>
+    </div>
+    <div class="faq">
+        <div class="faq-header">
+            <div class="faq-toggle">
+                <div class="plus-icon">+</div>
+            </div>
+            <h3>Для какого вида техники, вы разрабатываете ПО?</h3>
+        </div>
+        <p>Работаем с компьютерами, ноутбуками, сетевым оборудованием и мобильными устройствами.</p>
+    </div>
+    <div class="faq">
+        <div class="faq-header">
+            <div class="faq-toggle">
+                <div class="plus-icon">+</div>
+            </div>
+            <h3>Гарантируете ли вы качество выполненных работ?</h3>
+        </div>
+        <p>Да, на все услуги предоставляется гарантия от 3 до 12 месяцев, в зависимости от вида работ.</p>
+    </div>
+</div>
+
+<div id="contact" class="section" style="background-image: url('images/d760e3ab3f3889e3bd6cde1986b478b312_resize_2000x2000_same_5d63f7.jpg');">
+    <h2>КОНТАКТНАЯ ИНФОРМАЦИЯ</h2>
+    <p>Свяжитесь с нами для консультации или записи на ремонт. Мы ответим вам в кратчайшие сроки.</p>
+    <div id="error-message" style="color: rgba(255, 234, 0, 0.996); display: none; font-size: 22px;"></div>
+    <form id="contactForm" action="#" method="post" novalidate>
+        <input type="text" id="name" placeholder="Ваше имя" />
+        <input type="email" id="email" placeholder="Ваш email" />
+        <input type="text" id="phone" placeholder="Ваш телефон" />
+        <button type="submit" class="button">Отправить</button>
+    </form>
+    <p class="contact-info">Наш офис: г. Барнаул, пр-кт Ленина, д. 23, офис 112</p>
+    <p class="contact-info">Телефон: +7 (495) 123-45-67</p>
+</div>
+<footer>
+    <p>© 2025 Все права защищены. Автор: Чернышев В.К.</p>
+</footer>
+</body>
+</html>
